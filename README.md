@@ -1,11 +1,9 @@
 # DetailDash POS Prototype
 
 <p>
-  <img alt="Python" src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white">
-  <img alt="Flask" src="https://img.shields.io/badge/-Flask-000000?style=flat&logo=flask&logoColor=white">
-  <img alt="SQLite" src="https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white">
-  <img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=111111">
-  <img alt="Bootstrap" src="https://img.shields.io/badge/-Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white">
+  <a href="https://skillicons.dev">
+    <img alt="DetailDash stack" src="https://skillicons.dev/icons?i=python,flask,sqlite,javascript,bootstrap&theme=light&perline=5">
+  </a>
 </p>
 
 DetailDash is a Flask and SQLite point-of-sale prototype for car wash service workflows. It was built as a school project to practice routing, authentication, database-backed CRUD, inventory management, and transaction recording.
