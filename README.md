@@ -1,72 +1,32 @@
-# DetailDash
+# DetailDash POS Prototype
 
-DetailDash is a Flask-based point-of-sale prototype for a car wash business. It was built as a school project to practice web application routing, database-backed CRUD operations, authentication flow, inventory management, and transaction handling.
+<p>
+  <img alt="Python" src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white">
+  <img alt="Flask" src="https://img.shields.io/badge/-Flask-000000?style=flat&logo=flask&logoColor=white">
+  <img alt="SQLite" src="https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white">
+  <img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=111111">
+  <img alt="Bootstrap" src="https://img.shields.io/badge/-Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white">
+</p>
 
-## Features
+DetailDash is a Flask and SQLite point-of-sale prototype for car wash service workflows. It was built as a school project to practice routing, authentication, database-backed CRUD, inventory management, and transaction recording.
 
-- Account registration and login
-- Dashboard view with transaction and inventory sections
-- Product and service inventory CRUD
-- Transaction recording with customer, date, cart items, payment, and total amount
-- SQLite database initialization with sample services and products
-- Flask API endpoints consumed by the JavaScript frontend
+## What It Does
+
+- Registers and signs in users with Werkzeug password hashing
+- Shows dashboard, inventory, transaction, and account pages
+- Manages product and service inventory through CRUD workflows
+- Records transactions with customer details, cart items, payment, and totals
+- Exposes Flask API routes used by the JavaScript frontend
+- Seeds a local SQLite database with sample services and products
 
 ## Screenshots
 
-### Sign In
-
 ![DetailDash sign-in screen](docs/screenshots/login.png)
-
-### Dashboard
-
 ![DetailDash dashboard with transaction entry, product cards, and sales overview](docs/screenshots/dashboard.png)
-
-### Inventory
-
 ![DetailDash inventory table for services and products](docs/screenshots/inventory.png)
-
-### Transactions
-
 ![DetailDash transaction list](docs/screenshots/transactions.png)
 
-## Tech Stack
-
-- Python
-- Flask
-- Flask-SQLAlchemy
-- SQLite
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
-
-## Public Portfolio Notes
-
-This public-ready copy was reconstructed from the strongest project branch for portfolio review. Generated files, local SQLite databases, Python cache files, and duplicate legacy frontend files were removed. Passwords are stored with Werkzeug password hashes in this version.
-
-The screenshots above were captured from the local Flask app after a browser QA pass. This remains a school-project prototype, so the public framing should emphasize implemented routing, authentication, CRUD, and transaction workflows rather than production POS readiness.
-
-## Project Structure
-
-```text
-detaildash/
-  backend/
-    app.py
-    db.py
-    requirements.txt
-    static/
-    templates/
-  docs/
-    screenshots/
-  instance/
-    database.db
-```
-
-The `instance/database.db` file is generated locally when the app starts and is ignored by Git.
-
 ## Run Locally
-
-From the project root:
 
 ```powershell
 cd backend
@@ -77,36 +37,41 @@ $env:SECRET_KEY="change-this-for-local-use"
 python app.py
 ```
 
-Open `http://localhost:5000`.
+Open `http://localhost:5000`, create an account, then sign in.
 
-Create a new account through the registration form, then sign in.
+## Project Map
+
+```text
+detaildash/
+  backend/
+    app.py              # Flask routes, API endpoints, auth, and page handlers
+    db.py               # SQLAlchemy setup and seed data
+    static/             # CSS, JavaScript, and brand assets
+    templates/          # Flask templates
+  docs/screenshots/     # README screenshots captured from the local app
+```
+
+The local `instance/database.db` file is generated when the app starts and is ignored by Git.
+
+## Team Notes
+
+This public copy was reconstructed from the strongest project branch for portfolio review. Generated files, local databases, Python cache files, duplicate legacy frontend files, and old uploaded sample assets were removed. Keep future claims focused on implemented prototype workflows, not production POS readiness.
 
 ## Verification
-
-The current public copy was checked with `pip-audit` installed in the active virtual environment:
 
 ```powershell
 python -m compileall -q backend
 python -m pip_audit -r backend\requirements.txt
 ```
 
-Additional smoke checks passed for:
+Smoke checks passed for the main pages, product/service/transaction API routes, registration, login, account display, transaction creation, and browser QA on the public screens.
 
-- `GET /`, `/index`, `/inventory`, `/transaction`
-- `GET /api/products`, `/api/services`, `/api/transactions`
-- Browser QA with `agent-browser` for sign-in, account, dashboard, inventory, and transaction pages
+## Future Improvements
 
-## Key Routes
-
-- `GET /` and `GET /login` - login and registration page
-- `POST /register` - create account
-- `POST /login` - sign in
-- `GET /index` - dashboard
-- `GET /inventory` - inventory management
-- `GET /transaction` - transaction page
-- `GET /api/products` - product list
-- `GET /api/services` - service list
-- `GET /api/transactions` - transaction list
+- Add automated Flask route and model tests
+- Add transaction editing, receipts, and exportable reports
+- Add role-based access for admins and staff
+- Improve empty states, form validation, and mobile responsiveness
 
 ## Resume Framing
 
